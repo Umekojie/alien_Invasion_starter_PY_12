@@ -2,6 +2,7 @@ import sys
 import pygame
 from Settings import Settings
 from ship import Ship
+from aresnal import ShipArsenal
 
 class AlienInvasion:
     def __init__(self):
@@ -19,8 +20,10 @@ class AlienInvasion:
         self.running = True
         self.clock = pygame.time.Clock()
         # Adding game feature
+        
        
-        self.ship = Ship(self)
+        self.ship = Ship(self, ShipArsenal(self))
+
 
     def run_game(self)-> None:
         # game loop
@@ -62,6 +65,10 @@ class AlienInvasion:
             self.ship.moving_right = True
         elif event.key == pygame.K_LEFT:
             self.ship.moving_left = True
+        elif event.key == pygame.K_l:
+            self.ship.fire()        
+            #if self.ship.fire():
+                #play laser sound
         elif event.key == pygame.K_q:
             self.ship.moving_left = True
             pygame.quit()

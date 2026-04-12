@@ -1,0 +1,25 @@
+import pygame
+from typing import TYPE_CHECKING
+from bullet import bullet
+if TYPE_CHECKING:
+    from alien_invasion import AlienInvasion
+   
+class ShipArsenal:
+    def __init__(self, game: 'AlienInvasion') -> None:
+        self.game = game
+        self.settings = game.settings
+        self.aresnal = pygame.sprite.Group()
+
+    def update_arsenal(self) -> None:
+        self.aresnal.update()
+
+    def draw_arsenal(self) -> None:
+        for bullet in self.arsenal :
+            bullet.draw_bullet()
+
+    def fire_bullet(self):
+        if len(self.arsenal) < self.settings.bullet_amount:
+            new_bullet = bullet(self.game)
+            self.arsenal.add(new_bullet)
+            return True
+        return False
