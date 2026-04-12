@@ -3,7 +3,7 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
     from alien_invasion import AlienInvasion
-    from arsenal import Arsenal
+    from aresnal import ShipArsenal as Arsenal
 
 class Ship:
 
@@ -37,7 +37,7 @@ class Ship:
             self.x -= temp_speed
         self.rect.x = self.x
     def draw(self) -> None:
-        self.arsenal.draw()
+        self.arsenal.draw_arsenal()
         self.screen.blit(self.image, self.rect)
 
     def fire(self) -> bool:

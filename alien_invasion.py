@@ -37,7 +37,7 @@ class AlienInvasion:
 
     def _update_screen(self):
         self.screen.blit(self.bg,(0,0))
-        self.ship.draw()
+        self.ship.draw_arsenal()
         pygame.display.flip()
 
     def _check_events(self):
@@ -65,7 +65,7 @@ class AlienInvasion:
             self.ship.moving_right = True
         elif event.key == pygame.K_LEFT:
             self.ship.moving_left = True
-        elif event.key == pygame.K_l:
+        elif event.key == pygame.K_SPACE:
             self.ship.fire()        
             #if self.ship.fire():
                 #play laser sound

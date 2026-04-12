@@ -8,10 +8,10 @@ class ShipArsenal:
     def __init__(self, game: 'AlienInvasion') -> None:
         self.game = game
         self.settings = game.settings
-        self.aresnal = pygame.sprite.Group()
+        self.arsenal = pygame.sprite.Group()
 
     def update_arsenal(self) -> None:
-        self.aresnal.update()
+        self.arsenal.update()
 
     def draw_arsenal(self) -> None:
         for bullet in self.arsenal :
