@@ -2,6 +2,7 @@ import sys
 import pygame
 from Settings import Settings
 from ship import Ship
+
 class AlienInvasion:
     def __init__(self):
         pygame.init()
@@ -17,7 +18,7 @@ class AlienInvasion:
         
         self.running = True
         self.clock = pygame.time.Clock()
-# Adding game features
+        # Adding game features
         self.ship = Ship(self)
 
     def run_game(self)-> None:
