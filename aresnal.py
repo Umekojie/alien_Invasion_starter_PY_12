@@ -12,6 +12,12 @@ class ShipArsenal:
 
     def update_arsenal(self) -> None:
         self.arsenal.update()
+        self._remove_bullets_offscreen()
+
+    def _remove_bullets_offscreen(self) -> None:
+        for bullet in self.arsenal.copy():
+            if bullet.rect.bottom <= 0:
+                self.arsenal.remove(bullet)
 
     def draw_arsenal(self) -> None:
         for bullet in self.arsenal :
