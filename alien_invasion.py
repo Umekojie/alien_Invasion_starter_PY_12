@@ -72,6 +72,7 @@ class AlienInvasion:
         elif event.key == pygame.K_SPACE:        
             if self.ship.fire():
                 self.laser_sound.play()
+                self.laser_sound.fadeout(250)
                 #play laser sound
         elif event.key == pygame.K_q:
             self.ship.moving_left = True
