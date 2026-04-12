@@ -1,6 +1,7 @@
 import sys
 import pygame
 from Settings import Settings
+from ship import Ship
 class AlienInvasion:
     def __init__(self):
         pygame.init()
@@ -16,15 +17,19 @@ class AlienInvasion:
         
         self.running = True
         self.clock = pygame.time.Clock()
+# Adding game features
+        self.ship = Ship(self)
 
     def run_game(self)-> None:
-        #game loop
+        # game loop
         while self.running:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     self.running = False
                     sys.exit()
+                    #draw the ship then background
             self.screen.blit(self.bg,(0,0))
+            self.ship.draw()
             pygame.display.flip()
             self.clock.tick(self.settings.FPS)
 
