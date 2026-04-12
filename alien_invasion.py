@@ -27,7 +27,6 @@ class AlienInvasion:
         while self.running:
             self._check_events()
                     #draw the ship then background
-            self.ship = Ship(self)
             self.ship.update()
         
             self._update_screen()
