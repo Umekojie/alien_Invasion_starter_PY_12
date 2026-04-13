@@ -1,8 +1,9 @@
+from pathlib import Path
 import sys
 import pygame
 from Settings import Settings
 from ship import Ship
-from aresnal import ShipArsenal
+from arsenal import ShipArsenal
 
 class AlienInvasion:
     def __init__(self):
@@ -21,7 +22,9 @@ class AlienInvasion:
         self.clock = pygame.time.Clock()
 
         pygame.mixer.init()
-        self.laser_sound = pygame.mixer.Sound(self.settings.laser_sound)
+        # Change 'sounds' to 'sound'
+        
+        self.laser_sound = pygame.mixer.Sound(str(self.settings.laser_sound))
         self.laser_sound.set_volume(0.7)
         # Adding game feature
         
@@ -72,8 +75,9 @@ class AlienInvasion:
         elif event.key == pygame.K_SPACE:        
             if self.ship.fire():
                 self.laser_sound.play()
-                self.laser_sound.fadeout(250)
+                #self.laser_sound.fadeout(250)
                 #play laser sound
+            
         elif event.key == pygame.K_q:
             self.ship.moving_left = True
             pygame.quit()

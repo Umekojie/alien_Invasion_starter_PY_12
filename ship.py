@@ -3,7 +3,7 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
     from alien_invasion import AlienInvasion
-    from aresnal import ShipArsenal as Arsenal
+    from arsenal import ShipArsenal as Arsenal
 
 class Ship:
 
