@@ -83,4 +83,5 @@ class AlienInvasion:
             sys.exit()
     
 if __name__ == '__main__':
-    pass
+    ai = AlienInvasion()
+    ai.run_game()

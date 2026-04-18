@@ -9,11 +9,12 @@ class Settings:
         self.bg_file = Path.cwd()/'Assets'/'images'/'background.png'
 
         self.ship_file = Path.cwd()/'Assets'/'images'/'Ladyship.png'
-        self.bg_file = Path.cwd()/'Assets'/'images'/'Starbasesnow.png'
+        self.bg_file = Path.cwd()/'Assets'/'images'/'background.png'
 
         self.ship_file = Path.cwd()/'Assets'/'images'/'Ladyship.png'
-        self.ship_w = 40
-        self.ship_h = 60
+        self.ship_w = 100
+        self.ship_h = 120
+
         self.ship_speed = 5
 
         self.bullet_file = Path.cwd()/'Assets'/'images'/'rosebullet.png'
