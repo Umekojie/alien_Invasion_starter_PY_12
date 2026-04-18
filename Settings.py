@@ -11,7 +11,7 @@ class Settings:
         self.ship_file = Path.cwd()/'Assets'/'images'/'Ladyship.png'
         self.bg_file = Path.cwd()/'Assets'/'images'/'Starbasesnow.png'
 
-        self.ship_file = Path.cwd()/'Assets'/'images'/'ship.png'
+        self.ship_file = Path.cwd()/'Assets'/'images'/'Ladyship.png'
         self.ship_w = 40
         self.ship_h = 60
         self.ship_speed = 5
