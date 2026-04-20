@@ -14,8 +14,8 @@ class Settings:
         self.ship_file = Path.cwd()/'Assets'/'images'/'ship.png'
         self.ship_w = 50
         self.ship_h = 50
-
         self.ship_speed = 5
+        self.starting_ship_count = 3
 
         self.bullet_file = Path.cwd()/'Assets'/'images'/'laserBlast.png'
         
