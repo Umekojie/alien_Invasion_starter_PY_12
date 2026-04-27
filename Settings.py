@@ -33,6 +33,7 @@ class Settings:
         self.button_font_size = 48
         self.HUD_font_size = 20
         self.font_file = Path.cwd() /'Assets'/'Fonts'/ 'SilkScreen'/ 'Silkscreen-Bold.ttf'
+        self.scores_file = Path.cwd()/'Assets'/'file'/'scores.json'
 
     def initialize_dynamic_settings(self):
         # Ship settings
