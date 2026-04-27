@@ -34,6 +34,11 @@ class Settings:
         self.HUD_font_size = 20
         self.font_file = Path.cwd() /'Assets'/'Fonts'/ 'SilkScreen'/ 'Silkscreen-Bold.ttf'
         self.scores_file = Path.cwd()/'Assets'/'file'/'scores.json'
+        
+        # life indicator settings
+        self.life_image_file = Path.cwd()/'Assets'/'images'/'ship.png'
+        self.life_image_w = 25
+        self.life_image_h = 25
 
     def initialize_dynamic_settings(self):
         # Ship settings
