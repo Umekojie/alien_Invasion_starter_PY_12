@@ -9,17 +9,19 @@ from arsenal import ShipArsenal
 from alien_fleet import AlienFleet
 from time import sleep
 from button import Button
+from hud import HUD
 
 class AlienInvasion:
     def __init__(self):
         pygame.init()
         self.settings = Settings()
         self.settings.initialize_dynamic_settings()
-        self.game_stats = GameStats(self)
-        
+ 
         self.screen = pygame.display.set_mode((self.settings.screen_w, self.settings.screen_h))
         pygame.display.set_caption(self.settings.name)
         
+        self.game_stats = GameStats(self)
+        self.hud = HUD(self)        
         
         self.bg = pygame.image.load(self.settings.bg_file)
         self.bg = pygame.transform.scale(self.bg, (self.settings.screen_w, self.settings.screen_h))
@@ -74,6 +76,7 @@ class AlienInvasion:
         if collisions:
             self.impact_sound.play()
             self.game_stats.update(collisions)
+            self.hud.update_scores()
 
         if self.alien_fleet.check_destroyed_status():
             self._reset_level()
@@ -106,6 +109,7 @@ class AlienInvasion:
         #reset game stats
         self.game_stats.reset_stats()
         #update HUD scores
+        self.hud.update_scores()
         #reset level
         self._reset_level()
         # recenter ship
@@ -119,6 +123,7 @@ class AlienInvasion:
         self.ship.draw()
         self.alien_fleet.draw()
         # draw HUD
+        self.hud.draw()
 
         if not self.game_active:
             self.play_button.draw_button()
@@ -129,6 +134,7 @@ class AlienInvasion:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 self.running = False
+                self.game_stats.save_scores()
                 pygame.quit()
                 sys.exit()
             elif event.type == pygame.KEYDOWN and self.game_active == True:
@@ -165,6 +171,7 @@ class AlienInvasion:
             
         elif event.key == pygame.K_q:
             self.ship.moving_left = True
+            self.game_stats.save_scores()
             pygame.quit()
             sys.exit()
     
